@@ -1,0 +1,84 @@
+.track_list .download-mp3-col {
+    padding: 4px 4px 0;
+    width: 20px;
+}
+
+.track_list .download-mp3-inner {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    min-height: 16px;
+    min-width: 17px;
+}
+
+.track_list .download-mp3-inner.disabled {
+    background: transparent;
+    border: none;
+    cursor: default;
+}
+
+/* https://css-tricks.com/the-shapes-of-css/ */
+
+.track_list .download-mp3-inner:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+
+    border-right: 4px solid transparent;
+    border-top: 4px solid #1da0c3;
+    border-left: 4px solid #1da0c3;
+    border-bottom: 4px solid #1da0c3;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    margin: 4px 5px 0 5px;
+}
+
+.track_list .download-mp3-inner.disabled:after {
+    border: none;
+}
+
+.inline_player .download_mp3_cell {
+    vertical-align: bottom
+}
+
+.inline_player .player_download_button {
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
+    min-height: 50px;
+    min-width: 54px;
+}
+
+.inline_player .player_download_button:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    /* border-top: 11px inset transparent;
+    border-bottom: 11px inset transparent;
+    border-left: 20px solid #222;
+    border-right: 0; */
+
+    border-right: 11px solid transparent;
+    border-top: 11px solid #1da0c3;
+    border-left: 11px solid #1da0c3;
+    border-bottom: 11px solid #1da0c3;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+
+    margin: 14px 18px 0 18px;
+}
+
+.inline_player .player_download_button h2 {
+    display: inline-block;
+    vertical-align: super;
+}

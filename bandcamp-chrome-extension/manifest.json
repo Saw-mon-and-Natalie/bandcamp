@@ -1,0 +1,24 @@
+{
+    "name": "bandcamp mp3 downloader",
+    "version": "1.0",
+    "description": "Downloads hidden bandcamp mp3s on digital releases",
+    "permissions": ["downloads"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["https://*.bandcamp.com/*"],
+        "css": ["contentscript.css"],
+        "run_at": "document_idle",
+        "js": ["contentscript.js"]
+    }],
+    "web_accessible_resources": [
+        "assets/*",
+        "scripts/*"
+    ],
+    "externally_connectable": {
+        "matches": ["https://*.bandcamp.com/*"]
+      },
+    "manifest_version": 2
+}
