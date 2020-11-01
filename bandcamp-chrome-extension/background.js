@@ -1,9 +1,13 @@
 chrome.runtime.onMessageExternal.addListener(
     function(request, sender, sendResponse) {
-        console.log('message recived ');
+        console.log('message recieved ');
         console.log(request);
         if(request.message == "download_bandcamp") {
-            chrome.downloads.download({url: request.url, filename: request.title});
+            let title = request.title
+            title = title.replace(/[\\\/:\*?"<>|;,\^#%&!@:\+\=\{\}'`\~]/g, '-')
+            title = request.track_id ? (title + ' - ' + request.track_id) : title
+            title += '.mp3'
+            chrome.downloads.download({url: request.url, filename: title});
             return true;
         }
     });
